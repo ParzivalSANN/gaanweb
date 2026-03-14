@@ -43,19 +43,19 @@
 .hero-content {
   position: sticky;
   top: 30vh;
-  z-index: 50; /* Higher priority */
+  z-index: 5; /* Lowered so images can pass over the blur box */
   text-align: center;
   pointer-events: none;
   width: 100%;
   padding: 40px 20px;
-  background: rgba(255, 248, 248, 0.4); /* Glassmorphism start */
+  background: rgba(255, 248, 248, 0.4); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 30px;
   max-width: 90%;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 15px 35px rgba(230, 76, 140, 0.05);
+  box-shadow: 0 15px 35px rgba(230, 76, 140, 0.1);
 }
 
 .hero-title {
@@ -63,7 +63,11 @@
   color: var(--deep-blush);
   margin-bottom: 0.5rem;
   letter-spacing: -2px;
-  text-shadow: 0 0 20px rgba(230, 76, 140, 0.3), 0 5px 15px rgba(0,0,0,0.05);
+  /* Stronger shadows for maximum "pop" even when images pass by */
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 10px rgba(230, 76, 140, 0.5),
+    0 5px 15px rgba(0,0,0,0.1);
   animation: title-glow 3s ease-in-out infinite alternate;
 }
 
@@ -173,6 +177,7 @@
 .floating-item {
   position: absolute;
   transition: transform 0.1s ease-out;
+  z-index: 10; /* Above the hero-content box which is 5 */
 }
 
 .media-frame {
