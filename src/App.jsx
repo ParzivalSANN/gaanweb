@@ -1,9 +1,12 @@
+import React, { useState } from 'react';
+import FloatingGallery from './components/FloatingGallery';
+import Envelope from './components/Envelope';
 import MusicPlayer from './components/MusicPlayer';
 import SplashScreen from './components/SplashScreen';
 import './App.css';
 
 function App() {
-  const [showSplash, setShowSplash] = React.useState(true);
+  const [showSplash, setShowSplash] = useState(true);
 
   return (
     <div className="App">
