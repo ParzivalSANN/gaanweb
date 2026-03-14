@@ -30,10 +30,11 @@ const MusicPlayer = () => {
         events: {
           'onReady': (event) => {
             console.log("YouTube Player Ready");
-            // Set the real title when player is ready
+            // Set the real title and author when player is ready
             const videoData = event.target.getVideoData();
-            if (videoData && videoData.title) {
-              setSongTitle(videoData.title);
+            if (videoData) {
+              const fullInfo = `${videoData.title}${videoData.author ? ` - ${videoData.author}` : ''}`;
+              setSongTitle(fullInfo);
             }
           }
         }
