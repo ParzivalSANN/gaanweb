@@ -3,6 +3,7 @@ import './MusicPlayer.css';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [songTitle, setSongTitle] = useState("");
   const playerRef = useRef(null);
 
   // YouTube Video ID from the link: -oofWwcmNHk
@@ -29,6 +30,11 @@ const MusicPlayer = () => {
         events: {
           'onReady': (event) => {
             console.log("YouTube Player Ready");
+            // Set the real title when player is ready
+            const videoData = event.target.getVideoData();
+            if (videoData && videoData.title) {
+              setSongTitle(videoData.title);
+            }
           }
         }
       });
@@ -54,17 +60,14 @@ const MusicPlayer = () => {
         onClick={toggleMusic}
         title={isPlaying ? "Müziği Durdur" : "Müziği Başlat"}
       >
-        {isPlaying && (
+        {isPlaying && songTitle && (
           <div className="song-title-label">
-            Gülşen - Bir İhtimal Biliyorum
+            {songTitle}
           </div>
         )}
         <div className="heart-icon">
           {isPlaying ? '🎵' : '❤'}
         </div>
-        <span className="music-tooltip">
-          {isPlaying ? 'Müzik Açık' : 'Müziği Başlat'}
-        </span>
       </button>
     </div>
   );
