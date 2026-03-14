@@ -282,7 +282,8 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 500vh; /* Keep long for 14 items */
+    min-height: 400vh; /* Reduced slightly for better density */
+    overflow: visible; /* Allow items to breathe near the bottom */
   }
   .hero-title { 
     font-size: 2.2rem; 
@@ -292,25 +293,25 @@
   .hero-subtitle { font-size: 1rem; }
   
   .floating-item { 
-    width: 200px !important; /* Increased from 140px */
+    width: 200px !important; 
     z-index: 1;
   }
   
-  /* Strictly staggered vertical placement with more breathing room */
+  /* Strictly staggered vertical placement - kept within 95% of container */
   .item-0 { top: 5%; left: 5% !important; }
   .item-1 { top: 12%; right: 5% !important; }
   .item-2 { top: 20%; left: 10% !important; }
-  .item-3 { top: 30%; right: 10% !important; }
-  .item-4 { top: 40%; left: 5% !important; }
-  .item-5 { top: 50%; right: 5% !important; }
-  .item-6 { top: 60%; left: 10% !important; }
-  .item-7 { top: 70%; right: 10% !important; }
-  .item-8 { top: 80%; left: 5% !important; }
-  .item-9 { top: 90%; right: 5% !important; }
-  .item-10 { top: 105%; left: 8% !important; }
-  .item-11 { top: 120%; right: 8% !important; }
-  .item-12 { top: 135%; left: 5% !important; }
-  .item-13 { top: 150%; right: 5% !important; }
+  .item-3 { top: 28%; right: 10% !important; }
+  .item-4 { top: 35%; left: 5% !important; }
+  .item-5 { top: 42%; right: 5% !important; }
+  .item-6 { top: 50%; left: 10% !important; }
+  .item-7 { top: 58%; right: 10% !important; }
+  .item-8 { top: 66%; left: 5% !important; }
+  .item-9 { top: 74%; right: 5% !important; }
+  .item-10 { top: 82%; left: 8% !important; }
+  .item-11 { top: 88%; right: 8% !important; }
+  .item-12 { top: 93%; left: 5% !important; }
+  .item-13 { top: 95%; right: 5% !important; }
 
   .hero-content { 
     top: 20vh;
