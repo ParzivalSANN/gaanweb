@@ -42,12 +42,12 @@
 
 .hero-content {
   position: sticky;
-  top: 30vh;
-  z-index: 5; /* Lowered so images can pass over the blur box */
+  top: 5vh; /* Moved higher up */
+  z-index: 5; 
   text-align: center;
   pointer-events: none;
   width: 100%;
-  padding: 40px 20px;
+  padding: 30px 20px;
   background: rgba(255, 248, 248, 0.4); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -211,20 +211,21 @@
 
 /* Staggered positions along the scroll path */
 /* Strictly separated paths to avoid collisions */
-.item-0 { top: 5%; left: 5%; width: 280px; }
-.item-1 { top: 15%; right: 5%; width: 250px; }
-.item-2 { top: 30%; left: 10%; width: 220px; }
-.item-3 { top: 45%; right: 10%; width: 260px; }
-.item-4 { top: 60%; left: 8%; width: 240px; }
-.item-5 { top: 75%; right: 12%; width: 230px; }
-.item-6 { top: 95%; left: 5%; width: 210px; }
-.item-7 { top: 110%; right: 8%; width: 250px; }
-.item-8 { top: 130%; left: 15%; width: 220px; }
-.item-9 { top: 150%; right: 5%; width: 240px; }
-.item-10 { top: 175%; left: 10%; width: 260px; }
-.item-11 { top: 200%; right: 12%; width: 230px; }
-.item-12 { top: 225%; left: 5%; width: 240px; }
-.item-13 { top: 250%; right: 8%; width: 220px; }
+/* Redistributed items to start AFTER the title area and end before the section finish */
+.item-0 { top: 20%; left: 5%; width: 280px; }
+.item-1 { top: 25%; right: 5%; width: 250px; }
+.item-2 { top: 32%; left: 10%; width: 220px; }
+.item-3 { top: 38%; right: 10%; width: 260px; }
+.item-4 { top: 45%; left: 8%; width: 240px; }
+.item-5 { top: 52%; right: 12%; width: 230px; }
+.item-6 { top: 58%; left: 5%; width: 210px; }
+.item-7 { top: 65%; right: 8%; width: 250px; }
+.item-8 { top: 72%; left: 15%; width: 220px; }
+.item-9 { top: 78%; right: 5%; width: 240px; }
+.item-10 { top: 84%; left: 10%; width: 260px; }
+.item-11 { top: 88%; right: 12%; width: 230px; }
+.item-12 { top: 92%; left: 5%; width: 240px; }
+.item-13 { top: 95%; right: 8%; width: 220px; }
 
 @media (max-width: 768px) {
   .hero-section {
@@ -249,20 +250,21 @@
   }
   
   /* Strictly separated vertical paths for mobile */
-  .item-0 { top: 4%; left: 5% !important; }
-  .item-1 { top: 12%; right: 5% !important; }
-  .item-2 { top: 20%; left: 10% !important; }
-  .item-3 { top: 28%; right: -5% !important; }
-  .item-4 { top: 38%; left: -5% !important; }
-  .item-5 { top: 46%; right: 5% !important; }
-  .item-6 { top: 54%; left: 8% !important; }
-  .item-7 { top: 62%; right: 10% !important; }
-  .item-8 { top: 72%; left: 5% !important; }
-  .item-9 { top: 80%; right: 5% !important; }
-  .item-10 { top: 90%; left: 10% !important; }
-  .item-11 { top: 100%; right: -5% !important; }
-  .item-12 { top: 110%; left: 5% !important; }
-  .item-13 { top: 120%; right: 5% !important; }
+  /* Sequential placement for mobile - start at 25% */
+  .item-0 { top: 25%; left: 5% !important; }
+  .item-1 { top: 30%; right: 5% !important; }
+  .item-2 { top: 35%; left: 10% !important; }
+  .item-3 { top: 40%; right: -5% !important; }
+  .item-4 { top: 46%; left: -5% !important; }
+  .item-5 { top: 52%; right: 5% !important; }
+  .item-6 { top: 58%; left: 8% !important; }
+  .item-7 { top: 64%; right: 10% !important; }
+  .item-8 { top: 70%; left: 5% !important; }
+  .item-9 { top: 76%; right: 5% !important; }
+  .item-10 { top: 82%; left: 10% !important; }
+  .item-11 { top: 87%; right: -5% !important; }
+  .item-12 { top: 92%; left: 5% !important; }
+  .item-13 { top: 96%; right: 5% !important; }
 }
 
 .scroll-indicator {
