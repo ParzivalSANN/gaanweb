@@ -62,10 +62,11 @@
 .hero-content::before, .hero-content::after {
   content: '❤';
   position: absolute;
-  color: var(--deep-blush);
-  opacity: 0.1;
+  color: #ee2b5b;
+  opacity: 0.25; /* Increased opacity and vibrancy */
   font-size: 4rem;
   animation: float-slow 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(238, 43, 91, 0.4));
 }
 
 .hero-content::before { top: -10px; left: -10px; transform: rotate(-15deg); }
@@ -227,29 +228,35 @@
   border: 1px solid var(--rose-quartz);
 }
 
-/* Decorative elements in gaps */
+/* Decorative elements in gaps - Increased Density & Vibrancy */
 .decor {
   position: absolute;
   font-size: 2rem;
-  color: var(--deep-blush);
-  opacity: 0.15;
-  filter: blur(1px);
+  color: #ee2b5b; /* More vibrant deep blush */
+  opacity: 0.35; /* Increased from 0.15 */
+  filter: drop-shadow(0 0 5px rgba(238, 43, 91, 0.3));
   pointer-events: none;
   animation: decor-float 10s ease-in-out infinite;
   z-index: 2;
 }
 
 @keyframes decor-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(15deg); }
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-40px) rotate(20deg) scale(1.1); }
 }
 
-.deco-1 { top: 10%; left: 30%; font-size: 3rem; animation-delay: 0s; }
-.deco-2 { top: 25%; right: 40%; animation-delay: 1s; }
-.deco-3 { top: 40%; left: 45%; font-size: 2.5rem; animation-delay: 2s; }
-.deco-4 { top: 60%; right: 30%; animation-delay: 1.5s; }
-.deco-5 { top: 75%; left: 35%; font-size: 3rem; animation-delay: 0.5s; }
-.deco-6 { top: 90%; right: 45%; animation-delay: 3s; }
+.deco-1 { top: 8%; left: 25%; font-size: 3.5rem; animation-delay: 0s; }
+.deco-2 { top: 15%; right: 35%; animation-delay: 1s; }
+.deco-3 { top: 28%; left: 45%; font-size: 2.8rem; animation-delay: 2s; }
+.deco-4 { top: 35%; right: 25%; animation-delay: 1.5s; }
+.deco-5 { top: 48%; left: 35%; font-size: 3.2rem; animation-delay: 0.5s; }
+.deco-6 { top: 55%; right: 45%; animation-delay: 3s; }
+.deco-7 { top: 68%; left: 15%; font-size: 2.5rem; animation-delay: 4s; }
+.deco-8 { top: 75%; right: 15%; animation-delay: 2.5s; }
+.deco-9 { top: 85%; left: 50%; animation-delay: 3.5s; }
+.deco-10 { top: 92%; right: 30%; font-size: 3rem; animation-delay: 5s; }
+.deco-11 { top: 22%; left: 10%; animation-delay: 1.2s; }
+.deco-12 { top: 42%; right: 10%; animation-delay: 0.8s; }
 
 /* Staggered positions along the scroll path */
 /* Strictly separated paths to avoid collisions */

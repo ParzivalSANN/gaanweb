@@ -51,13 +51,19 @@ const FloatingGallery = () => {
       </div>
 
       <div className="media-gallery">
-        {/* Decorative elements */}
+        {/* Decorative elements - Increased density */}
         <div className="decor deco-1">❤</div>
         <div className="decor deco-2">✨</div>
         <div className="decor deco-3">💗</div>
         <div className="decor deco-4">✨</div>
         <div className="decor deco-5">❤</div>
         <div className="decor deco-6">💖</div>
+        <div className="decor deco-7">💗</div>
+        <div className="decor deco-8">✨</div>
+        <div className="decor deco-9">❤</div>
+        <div className="decor deco-10">💖</div>
+        <div className="decor deco-11">💗</div>
+        <div className="decor deco-12">✨</div>
         
         {mediaItems.map((item, index) => (
           <div 
