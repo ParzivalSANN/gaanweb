@@ -282,97 +282,42 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 500vh;
-    /* Full space for 14 items */
+    min-height: 500vh; /* Keep long for 14 items */
   }
-
-  .hero-title {
-    font-size: 2.5rem;
-    padding: 0 15px;
+  .hero-title { 
+    font-size: 2.2rem; 
+    padding: 0 10px;
+    margin-bottom: 0.5rem;
   }
-
-  .floating-item {
-    width: 140px !important;
+  .hero-subtitle { font-size: 1rem; }
+  
+  .floating-item { 
+    width: 200px !important; /* Increased from 140px */
+    z-index: 1;
   }
+  
+  /* Strictly staggered vertical placement with more breathing room */
+  .item-0 { top: 5%; left: 5% !important; }
+  .item-1 { top: 12%; right: 5% !important; }
+  .item-2 { top: 20%; left: 10% !important; }
+  .item-3 { top: 30%; right: 10% !important; }
+  .item-4 { top: 40%; left: 5% !important; }
+  .item-5 { top: 50%; right: 5% !important; }
+  .item-6 { top: 60%; left: 10% !important; }
+  .item-7 { top: 70%; right: 10% !important; }
+  .item-8 { top: 80%; left: 5% !important; }
+  .item-9 { top: 90%; right: 5% !important; }
+  .item-10 { top: 105%; left: 8% !important; }
+  .item-11 { top: 120%; right: 8% !important; }
+  .item-12 { top: 135%; left: 5% !important; }
+  .item-13 { top: 150%; right: 5% !important; }
 
-  /* Strictly staggered vertical placement */
-  .item-0 {
-    top: 5%;
-    left: 8% !important;
-  }
-
-  .item-1 {
-    top: 12%;
-    right: 8% !important;
-  }
-
-  .item-2 {
-    top: 20%;
-    left: 5% !important;
-  }
-
-  .item-3 {
-    top: 28%;
-    right: 5% !important;
-  }
-
-  .item-4 {
-    top: 36%;
-    left: 10% !important;
-  }
-
-  .item-5 {
-    top: 44%;
-    right: 10% !important;
-  }
-
-  .item-6 {
-    top: 52%;
-    left: 5% !important;
-  }
-
-  .item-7 {
-    top: 60%;
-    right: 5% !important;
-  }
-
-  .item-8 {
-    top: 68%;
-    left: 12% !important;
-  }
-
-  .item-9 {
-    top: 76%;
-    right: 12% !important;
-  }
-
-  .item-10 {
-    top: 84%;
-    left: 5% !important;
-  }
-
-  .item-11 {
-    top: 92%;
-    right: 5% !important;
-  }
-
-  .item-12 {
-    top: 100%;
-    left: 10% !important;
-  }
-
-  .item-13 {
-    top: 108%;
-    right: 10% !important;
-  }
-
-  .hero-content {
-    top: 25vh;
-    /* Center it more for mobile */
+  .hero-content { 
+    top: 20vh;
     position: sticky;
   }
+}
 
-  .scroll-indicator {
-    margin-top: 20px;
-  }
+.scroll-indicator {
+  margin-top: 20px;
 }

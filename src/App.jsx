@@ -1,11 +1,13 @@
 import React from 'react';
 import FloatingGallery from './components/FloatingGallery';
 import Envelope from './components/Envelope';
+import MusicPlayer from './components/MusicPlayer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <MusicPlayer />
       <div className="background-decor">
         <div className="sparkle s1"></div>
         <div className="sparkle s2"></div>
