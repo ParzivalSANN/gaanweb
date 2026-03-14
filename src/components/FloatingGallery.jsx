@@ -52,11 +52,11 @@ const FloatingGallery = () => {
 
       <div className="media-gallery">
         {mediaItems.map((item, index) => (
-          <div
-            key={index}
+          <div 
+            key={index} 
             className={`floating-item item-${index}`}
-            style={{
-              transform: `translateY(${scrollY * (0.05 + (index % 7) * 0.02)}px)`
+            style={{ 
+              transform: `translateY(${scrollY * (index % 2 === 0 ? 0.08 : 0.12)}px)` 
             }}
           >
             <div className={`media-frame ${item.type}`}>
