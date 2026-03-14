@@ -3,25 +3,52 @@ import './MusicPlayer.css';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const playerRef = useRef(null);
 
-  // Using a soft romantic instrumental track (public domain/royalty free)
-  const musicUrl = "https://www.chosic.com/wp-content/uploads/2021/04/And-So-It-Begins-Inspired-By-Crush-Music.mp3";
+  // YouTube Video ID from the link: -oofWwcmNHk
+  const videoId = "-oofWwcmNHk";
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player('youtube-player', {
+        height: '0',
+        width: '0',
+        videoId: videoId,
+        playerVars: {
+          'autoplay': 0,
+          'controls': 0,
+          'loop': 1,
+          'playlist': videoId
+        },
+        events: {
+          'onReady': (event) => {
+            console.log("YouTube Player Ready");
+          }
+        }
+      });
+    };
+  }, []);
 
   const toggleMusic = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(err => {
-        console.error("Autoplay blocked or audio error:", err);
-      });
+    if (playerRef.current) {
+      if (isPlaying) {
+        playerRef.current.pauseVideo();
+      } else {
+        playerRef.current.playVideo();
+      }
+      setIsPlaying(!isPlaying);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
     <div className="music-player">
-      <audio ref={audioRef} src={musicUrl} loop />
+      <div id="youtube-player" style={{ display: 'none' }}></div>
       <button 
         className={`music-btn ${isPlaying ? 'playing' : ''}`} 
         onClick={toggleMusic}
