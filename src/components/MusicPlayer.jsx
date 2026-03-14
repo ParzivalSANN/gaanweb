@@ -54,6 +54,11 @@ const MusicPlayer = () => {
         onClick={toggleMusic}
         title={isPlaying ? "Müziği Durdur" : "Müziği Başlat"}
       >
+        {isPlaying && (
+          <div className="song-title-label">
+            Gülşen - Bir İhtimal Biliyorum
+          </div>
+        )}
         <div className="heart-icon">
           {isPlaying ? '🎵' : '❤'}
         </div>
