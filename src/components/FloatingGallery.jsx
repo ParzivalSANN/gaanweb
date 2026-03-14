@@ -51,6 +51,14 @@ const FloatingGallery = () => {
       </div>
 
       <div className="media-gallery">
+        {/* Decorative elements */}
+        <div className="decor deco-1">❤</div>
+        <div className="decor deco-2">✨</div>
+        <div className="decor deco-3">💗</div>
+        <div className="decor deco-4">✨</div>
+        <div className="decor deco-5">❤</div>
+        <div className="decor deco-6">💖</div>
+        
         {mediaItems.map((item, index) => (
           <div 
             key={index} 

@@ -1,12 +1,13 @@
-import React from 'react';
-import FloatingGallery from './components/FloatingGallery';
-import Envelope from './components/Envelope';
 import MusicPlayer from './components/MusicPlayer';
+import SplashScreen from './components/SplashScreen';
 import './App.css';
 
 function App() {
+  const [showSplash, setShowSplash] = React.useState(true);
+
   return (
     <div className="App">
+      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <MusicPlayer />
       <div className="background-decor">
         <div className="sparkle s1"></div>
